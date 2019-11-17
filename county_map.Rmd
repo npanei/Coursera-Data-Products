@@ -1,0 +1,21 @@
+---
+title: "Interactive Map Example"
+author: "npanei"
+date: "November 17, 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Three Counties of Southern Maryland
+
+```{r}
+library(leaflet)
+county_map <- leaflet() %>% addTiles() %>%
+    addMarkers(lat=c(38.311745,38.560159,38.525590),
+               lng=c(-76.599418,-76.575053,-76.978393),
+               popup=c("St. Mary's County","Calvert County","Charles County"))
+county_map
+```
