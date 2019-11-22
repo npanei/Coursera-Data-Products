@@ -1,0 +1,21 @@
+---
+title: "Plotly Example"
+author: "npanei"
+date: "November 21, 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Plotly Example - Randomly Generated Numbers
+
+```{r}
+suppressPackageStartupMessages(library(plotly))
+set.seed(250)
+x1 <- runif(200,0,5)
+x2 <- x1 + rnorm(200)
+
+suppressMessages(plot_ly(x=x1,y=x2,mode="markers"))
+```
