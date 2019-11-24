@@ -1,21 +1,22 @@
 ---
-title: "Plotly Example"
+title: "Plotly Example Presentation"
 author: "npanei"
-date: "November 21, 2019"
-output: html_document
+date: "November 24, 2019"
+output: ioslides_presentation
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE)
 ```
 
-## Plotly Example - Randomly Generated Numbers
+## Plotly Example
+### Randomly Generated Numbers
 
 ```{r}
-suppressPackageStartupMessages(library(plotly))
+suppressWarnings(suppressPackageStartupMessages(library(plotly)))
 set.seed(250)
 x1 <- runif(200,0,5)
 x2 <- x1 + rnorm(200)
 
-suppressMessages(plot_ly(x=x1,y=x2,mode="markers"))
+suppressMessages(plot_ly(x=x1,y=x2,type="scatter",mode="markers"))
 ```
